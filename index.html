@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+           // This function is executed when the document is fully loaded and ready to be manipulated. 
+            $("#btn").click(function () {
+          // This function is triggered when the element with the id "btn" is clicked.
+                $("#test").load("data.txt", {
+// The jQuery load() method fetches content from the "data.txt" file and inserts it into the
+//  element with the id "test".
+                    Name: "Daniel",
+                    Lastname: "Nielsen"
+// Additional data to be sent along with the request. This data will be passed to the server.
+                },function(){
+// This function is a callback that's executed after the content from "data.txt" is successfully
+ //loaded and inserted into "#test".
+                    alert("Hi there!");});
+                    // An alert is displayed with the message "Hi there!".
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="test">
+        <p>This is the first content</p>
+        <button id="btn">Click to change</button>
+    </div>
+</body>
+
+</html>
